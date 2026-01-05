@@ -2199,11 +2199,11 @@
             document.querySelectorAll('.hidden-period').forEach(el => el.style.display = 'none');
             document.getElementById('tariff-display-badge').textContent = '0';
             
-            // FINALMENTE: Mostrar pantalla inicial y selector de modo
+            // FINALMENTE: Mostrar pantalla inicial y mantener oculto selector de modo
             document.getElementById('screen-inicio')?.classList.add('active');
             const modoComparacionSection = document.getElementById('modo-comparacion-section');
             if (modoComparacionSection) {
-                modoComparacionSection.style.display = 'block';
+                modoComparacionSection.style.display = 'none'; // Mantener oculto
             }
             
             console.log('✅ resetToLanding completada - screen-inicio activa');
