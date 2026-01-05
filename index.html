@@ -2774,6 +2774,7 @@
                 
                 } else {
                     // Flujo normal - mostrar resultados
+                    document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
                     document.getElementById('results-view').classList.remove('hidden');
                     document.getElementById('results-view').classList.add('animate-fade-in-up');
                     hideNavbar(); // Ocultar navbar al mostrar resultados
@@ -3056,6 +3057,7 @@
             
             renderMultiResultsUI(finalResult);
             
+            document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
             document.getElementById('initial-view').classList.add('hidden');
             document.getElementById('multicups-saga-view').classList.add('hidden');
             document.getElementById('scanner-view').classList.add('hidden');
@@ -10766,6 +10768,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
             } else {
                 // Contexto individual: Mostrar resultados CON comparación indexada
                 renderResultsUI(lastComparisonResult, lastIndexedResult);
+                document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
                 document.getElementById('initial-view').classList.add('hidden');
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
@@ -10918,6 +10921,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
             } else {
                 // Contexto individual: Mostrar resultados (sin indexado)
                 renderResultsUI(lastComparisonResult, null);
+                document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
                 document.getElementById('initial-view').classList.add('hidden');
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
@@ -11214,6 +11218,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
             } else {
                 // Contexto individual: Mostrar resultados
                 renderResultsUI(lastComparisonResult, lastIndexedResult);
+                document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
                 document.getElementById('initial-view').classList.add('hidden');
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
@@ -12052,6 +12057,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
                 
                 console.log('Hiding initial-view and showing results-view');
                 document.getElementById('loading-status').classList.add('hidden');
+                document.getElementById('screen-inicio').classList.remove('active'); // Ocultar pantalla inicio
                 document.getElementById('initial-view').classList.add('hidden');
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
