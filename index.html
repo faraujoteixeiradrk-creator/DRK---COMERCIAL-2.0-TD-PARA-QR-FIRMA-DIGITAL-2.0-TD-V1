@@ -2207,7 +2207,27 @@
             }
             
             console.log('✅ resetToLanding completada - screen-inicio activa');
+            
+            // NUEVO: Mostrar navbar al volver al inicio
+            showNavbar();
         };
+        
+        // NUEVAS FUNCIONES: Ocultar/Mostrar Navbar cuando se muestran resultados
+        function hideNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                navbar.style.display = 'none';
+                console.log('🔒 Navbar ocultado');
+            }
+        }
+        
+        function showNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                navbar.style.display = 'block';
+                console.log('👁️ Navbar mostrado');
+            }
+        }
         
         // NUEVA FUNCIÓN: Volver desde initial-view SIN hacer reset completo
         window.goBackFromInitialView = function() {
@@ -2756,6 +2776,7 @@
                     // Flujo normal - mostrar resultados
                     document.getElementById('results-view').classList.remove('hidden');
                     document.getElementById('results-view').classList.add('animate-fade-in-up');
+                    hideNavbar(); // Ocultar navbar al mostrar resultados
                     
                     // Detectar modo DUAL y mostrar botón si corresponde
                     if (window.checkDualMode) window.checkDualMode();
@@ -3040,6 +3061,7 @@
             document.getElementById('scanner-view').classList.add('hidden');
             document.getElementById('results-view').classList.remove('hidden');
             document.getElementById('results-view').classList.add('animate-fade-in-up');
+            hideNavbar(); // Ocultar navbar al mostrar resultados
         }
 
 
@@ -10748,6 +10770,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
                 document.getElementById('results-view').classList.add('animate-fade-in-up');
+                hideNavbar(); // Ocultar navbar al mostrar resultados
             }
         }
         
@@ -10899,6 +10922,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
                 document.getElementById('results-view').classList.add('animate-fade-in-up');
+                hideNavbar(); // Ocultar navbar al mostrar resultados
             }
         }
         
@@ -11194,6 +11218,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
                 document.getElementById('results-view').classList.add('animate-fade-in-up');
+                hideNavbar(); // Ocultar navbar al mostrar resultados
             }
         }
         
@@ -12031,6 +12056,7 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
                 document.getElementById('scanner-view').classList.add('hidden');
                 document.getElementById('results-view').classList.remove('hidden');
                 document.getElementById('results-view').classList.add('animate-fade-in-up');
+                hideNavbar(); // Ocultar navbar al mostrar resultados
                 
                 console.log('Done showing results');
             }
