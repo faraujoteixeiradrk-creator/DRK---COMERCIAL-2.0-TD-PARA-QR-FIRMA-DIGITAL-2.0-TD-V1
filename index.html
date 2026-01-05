@@ -10153,33 +10153,17 @@ Destinatarios: F.araujo@drk.es, rguerra@drk.es, l.grande@drk.es
         // --- NUEVO: Modal de Decisión (Mejor vs Elegir) ---
         
         function showOfferDecisionModal() {
+            // SIMPLIFICADO: En lugar de mostrar el modal, ejecutar directamente la mejor opción con tarifa FIJA
+            console.log('Auto-ejecutando mejor opción con tarifa FIJA (saltando modal de decisión)');
+            
+            // Ocultar loading
             document.getElementById('loading-status').classList.add('hidden');
-            document.getElementById('offer-decision-modal').classList.remove('hidden');
-            document.getElementById('offer-decision-modal').classList.add('flex');
             
-            // CRÍTICO: Traducir contenido del modal
-            if (window.translateAll) {
-                setTimeout(() => window.translateAll(), 50);
-            }
+            // Configurar tarifa FIJA
+            bestOptionTariffChoice = 'fija';
             
-            // Ocultar el selector de tarifa al abrir el modal (se mostrará solo si es necesario)
-            document.getElementById('best-option-tariff-selector')?.classList.add('hidden');
-            
-            // IMPORTANTE: El checkbox de comparación siempre visible (para DRK y POWER CUP)
-            const checkboxContainer = document.getElementById('powercup-indexed-comparison-checkbox');
-            checkboxContainer?.classList.remove('hidden');
-            
-            // Resetear selector a FIJA por defecto
-            const fijaRadio = document.querySelector('input[name="best-option-tariff-type"][value="fija"]');
-            if (fijaRadio) {
-                fijaRadio.checked = true;
-                updateBestOptionTariffChoice('fija');
-            }
-            
-            // CRÍTICO: Traducir contenido del modal
-            if (window.translateAll) {
-                setTimeout(() => window.translateAll(), 50);
-            }
+            // Ejecutar directamente la mejor opción
+            selectBestOptionDirect();
         }
         
         function closeOfferDecisionModal() {
